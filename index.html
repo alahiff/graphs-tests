@@ -1,0 +1,19 @@
+<head>
+  <style> body { margin: 0; } </style>
+
+  <script src="https://unpkg.com/3d-force-graph"></script>
+</head>
+
+<body>
+
+  <div id="3d-graph"></div>
+
+  <script>
+    const elem = document.getElementById('3d-graph');
+
+    const Graph = ForceGraph3D()(elem)
+      .jsonUrl('./data2.json')
+      .nodeAutoColorBy('user')
+      .nodeLabel(node => `${node.user}: ${node.name}`)
+  </script>
+</body>
